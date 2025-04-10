@@ -31,7 +31,6 @@ const RegisterPage = () => {
         const loadingToast = toast.loading("Creating account...");
 
         try {
-            console.log(`${import.meta.env.VITE_API_URL}/auth/register`);
             const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, {
                 username: formData.username,
                 email: formData.email,
