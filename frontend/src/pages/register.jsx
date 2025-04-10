@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const RegisterPage = () => {
     const navigate = useNavigate();
@@ -19,12 +20,28 @@ const RegisterPage = () => {
         }));
     };
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
 
         if (formData.password !== formData.confirmPassword) {
             toast.error("Passwords do not match.");
             return;
+        }
+
+        const loadingToast = toast.loading("Creating account...");
+
+        try {
+            console.log(`${import.meta.env.VITE_API_URL}/auth/register`);
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, {
+                username: formData.username,
+                email: formData.email,
+                password: formData.password
+            });
+
+            toast.success("Registration successful", { id: loadingToast });
+            navigate("/login");
+        } catch (err) {
+            toast.error(err.response?.data?.error || "Registration failed", { id: loadingToast });
         }
     };
 
@@ -51,7 +68,7 @@ const RegisterPage = () => {
                     <div>
                         <label className="text-sm text-gray-400">Password</label>
                         <input
-                            type="password" name="password" placeholder="••••••••" value={formData.password} onChange={handleChange} 
+                            type="password" name="password" placeholder="••••••••" value={formData.password} onChange={handleChange}
                             className="w-full mt-1 px-4 py-3 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-gray-500"
                         />
                     </div>
