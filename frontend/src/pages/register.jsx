@@ -52,14 +52,14 @@ const RegisterPage = () => {
                 <form className="flex flex-col gap-5" onSubmit={handleRegister}>
                     <div>
                         <label className="text-sm text-gray-400">Username</label>
-                        <input type="text" name="username" placeholder="vibe_master" value={formData.username} onChange={handleChange}
+                        <input type="text" placeholder="Enter Username" name="username" value={formData.username} onChange={handleChange}
                             className="w-full mt-1 px-4 py-3 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-gray-500"
                         />
                     </div>
 
                     <div>
                         <label className="text-sm text-gray-400">Email</label>
-                        <input type="email" name="email" placeholder="you@vibeify.com" value={formData.email} onChange={handleChange}
+                        <input type="email" placeholder="Enter Email" name="email" value={formData.email} onChange={handleChange}
                             className="w-full mt-1 px-4 py-3 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-gray-500"
                         />
                     </div>
@@ -67,20 +67,15 @@ const RegisterPage = () => {
                     <div>
                         <label className="text-sm text-gray-400">Password</label>
                         <input
-                            type="password" name="password" placeholder="••••••••" value={formData.password} onChange={handleChange}
+                            type="password" placeholder="Enter Password" name="password" value={formData.password} onChange={handleChange}
                             className="w-full mt-1 px-4 py-3 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-gray-500"
                         />
                     </div>
 
                     <div>
                         <label className="text-sm text-gray-400">Confirm Password</label>
-                        <input
-                            type="password"
-                            name="confirmPassword"
-                            placeholder="••••••••"
-                            value={formData.confirmPassword}
-                            onChange={handleChange}
-                            className="w-full mt-1 px-4 py-3 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-gray-500"
+                        <input type="password" placeholder="Confirm Password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} 
+                        className="w-full mt-1 px-4 py-3 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-gray-500"
                         />
                     </div>
 

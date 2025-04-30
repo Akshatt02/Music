@@ -37,7 +37,7 @@ const LoginPage = () => {
 				<form className="flex flex-col gap-5" onSubmit={handleLogin}>
 					<div>
 						<label className="text-sm text-gray-400">Email</label>
-						<input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email"
+						<input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email"
 							className="w-full mt-1 px-4 py-3 rounded-lg bg-neutral-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600 placeholder-gray-500"
 						/>
 					</div>
